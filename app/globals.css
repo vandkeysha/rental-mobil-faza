@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand / Primary */
+  --color-blue-50: #E6F0FF;
+  --color-blue-100: #CCE0FF;
+  --color-blue-300: #66A3FF;
+  --color-blue-500: #0066FF;
+  --color-blue-600: #0052CC;
+  --color-blue-700: #003D99;
+  --color-azure-500: #007FFF;
+
+  /* Secondary / Gold (warna logo) */
+  --color-gold-50: #FEFCE8;
+  --color-gold-100: #FCF6C5;
+  --color-gold-300: #F7EB85;
+  --color-gold-400: #F3E157;
+  --color-gold-500: #E3CE2A;
+  --color-gold-600: #A89100;
+
+  /* Semantic */
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #128C7E;
+
+  /* Neutral / Ink */
+  --color-ink-900: #0F1722;
+  --color-ink-700: #374151;
+  --color-ink-500: #6B7280;
+  --color-line-200: #E5E7EB;
+  --color-surface-100: #F8FAFF;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-modal: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Base */
+body {
+  background-color: #ffffff;
+  color: #0F1722;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F8FAFF; }
+::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #66A3FF; }
+
+/* Focus ring global */
+:focus-visible {
+  outline: 2px solid #007FFF;
+  outline-offset: 2px;
+}
+
+/* Modal animation (replaces tailwindcss-animate) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-in-from-bottom {
+  from { transform: translateY(1rem); }
+  to   { transform: translateY(0); }
+}
+.animate-in {
+  animation-fill-mode: both;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+.fade-in       { animation-name: fade-in; }
+.slide-in-from-bottom-4 {
+  animation-name: slide-in-from-bottom;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
