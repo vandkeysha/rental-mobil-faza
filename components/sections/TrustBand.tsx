@@ -10,16 +10,22 @@ const TRUST_ITEMS = [
 export default function TrustBand() {
   return (
     <section className="bg-white border-y border-line-200">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="max-w-[1200px] mx-auto px-8 lg:px-9 py-8">
+        <div className="flex flex-wrap justify-between gap-6">
           {TRUST_ITEMS.map((item) => (
             <div key={item.label} className="flex items-center gap-3">
               <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
                 <item.icon size={20} className="text-blue-600" />
               </div>
+
               <div>
-                <p className="text-xs text-ink-500">{item.label}</p>
-                <p className="text-sm font-semibold text-ink-900 leading-snug">{item.value}</p>
+                <p className="text-xs text-ink-500">
+                  {item.label}
+                </p>
+
+                <p className="text-sm font-semibold text-ink-900 leading-snug">
+                  {item.value}
+                </p>
               </div>
             </div>
           ))}

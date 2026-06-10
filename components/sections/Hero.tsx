@@ -28,7 +28,7 @@ export default function Hero() {
         src="/hero-kendaraan.svg"
         alt=""
         aria-hidden="true"
-        className="hidden lg:block absolute top-0 h-full w-auto pointer-events-none select-none"
+        className="hidden lg:block absolute top-1/2 -translate-y-1/2 h-[150%] w-auto pointer-events-none select-none"
         style={{ right: "-12%" }}
       />
 
@@ -45,46 +45,10 @@ export default function Hero() {
             Rental Mobil & Motor<br />
             <span className="text-blue-100">Terpercaya di Cikarang</span>
           </h1>
-          <p className="text-base sm:text-lg text-blue-100 leading-relaxed mb-8 max-w-xl">
+          <p className="text-base sm:text-lg text-blue-100 leading-relaxed mb-14 max-w-xl">
             Armada terawat, proses mudah, layanan profesional sejak 2012.
             Lepas kunci maupun dengan driver — siap melayani kebutuhan Anda.
           </p>
-
-          {/* Quick Filter */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-8 border border-white/20">
-            <p className="text-sm font-medium text-white/80 mb-3 flex items-center gap-2">
-              <Search size={14} />
-              Cari unit yang sesuai
-            </p>
-            <div className="space-y-3">
-              <div>
-                <p className="text-xs text-white/60 mb-2">Tipe kendaraan</p>
-                <div className="flex flex-wrap gap-2">
-                  {(["semua", "mobil", "motor"] as TipeFilter[]).map((t) => (
-                    <ChipFilter
-                      key={t}
-                      label={t === "semua" ? "Semua" : t === "mobil" ? "Mobil" : "Motor"}
-                      active={tipe === t}
-                      onClick={() => setTipe(t)}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div>
-                <p className="text-xs text-white/60 mb-2">Jenis layanan</p>
-                <div className="flex flex-wrap gap-2">
-                  {(["semua", "lepas_kunci", "driver"] as LayananFilter[]).map((l) => (
-                    <ChipFilter
-                      key={l}
-                      label={l === "semua" ? "Semua" : l === "lepas_kunci" ? "Lepas Kunci" : "Dengan Driver"}
-                      active={layanan === l}
-                      onClick={() => setLayanan(l)}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 pb-4">
