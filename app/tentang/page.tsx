@@ -7,7 +7,7 @@ import { buildGeneralWaLink } from "@/lib/whatsapp";
 export const metadata: Metadata = {
   title: "Tentang Kami",
   description:
-    "PT FAZA Cemerlang Abadi — penyedia rental mobil & motor di Cikarang sejak 2012. Terdaftar resmi, armada lengkap, pelayanan profesional.",
+    "PT FAZA Cemerlang Abadi penyedia rental mobil & motor di Cikarang sejak 2012. Terdaftar resmi, armada lengkap, pelayanan profesional.",
 };
 
 const MILESTONES = [
@@ -25,7 +25,7 @@ export default function TentangPage() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">Tentang FAZA Rent Car</h1>
           <p className="text-blue-100 text-lg max-w-xl">
-            Mitra perjalanan terpercaya di Cikarang sejak 2012 — PT FAZA Cemerlang Abadi.
+            Mitra perjalanan terpercaya di Cikarang sejak 2012 PT FAZA Cemerlang Abadi.
           </p>
         </div>
       </div>

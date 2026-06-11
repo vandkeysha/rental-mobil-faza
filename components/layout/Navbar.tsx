@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,20 +14,28 @@ const NAV_LINKS = [
   { label: "Armada", href: "/armada" },
   { label: "Tentang", href: "/tentang" },
   { label: "Syarat", href: "/syarat" },
-  { label: "Galeri", href: "/galeri" },
-  { label: "Blog", href: "/blog" },
+  { label: "Galeri & Blog", href: "/galeri" },
   { label: "Kontak", href: "/kontak" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   const pathname = usePathname();
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 8);
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 8);
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -42,7 +51,11 @@ export default function Navbar() {
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0" aria-label="FAZA Rent Car — Beranda">
+        <Link
+          href="/"
+          className="flex items-center shrink-0"
+          aria-label="FAZA Rent Car — Beranda"
+        >
           <Image
             src="/logo.svg"
             alt="FAZA Rent Car"
@@ -54,7 +67,7 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
           {NAV_LINKS.map((link) => (
             <Link
@@ -72,9 +85,13 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA */}
+        {/* Desktop CTA */}
         <div className="hidden lg:flex items-center">
-          <a href={buildGeneralWaLink()} target="_blank" rel="noopener noreferrer">
+          <a
+            href={buildGeneralWaLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button variant="whatsapp" size="sm">
               <MessageCircle size={16} />
               Chat WhatsApp
@@ -82,18 +99,18 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
-          className="lg:hidden p-2 rounded-lg text-ink-700 hover:bg-surface-100 cursor-pointer"
-          onClick={() => setMenuOpen((v) => !v)}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="lg:hidden p-2 rounded-lg text-ink-700 hover:bg-surface-100"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden bg-white border-t border-line-200 px-4 pb-4 shadow-card-hover">
           <nav className="flex flex-col gap-1 pt-3">
@@ -112,13 +129,14 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
+
           <a
             href={buildGeneralWaLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 flex"
+            className="mt-3 block"
           >
-            <Button variant="whatsapp" fullWidth>
+            <Button variant="whatsapp">
               <MessageCircle size={16} />
               Chat WhatsApp
             </Button>

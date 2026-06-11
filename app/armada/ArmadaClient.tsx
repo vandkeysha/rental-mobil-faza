@@ -3,10 +3,10 @@ import { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { MessageCircle, SlidersHorizontal } from "lucide-react";
 import UnitCard from "@/components/ui/UnitCard";
+import { UNITS, type UnitTipe } from "@/lib/data/units";
 import { ChipFilter } from "@/components/ui/Chip";
 import Button from "@/components/ui/Button";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import { UNITS, type UnitTipe, type UnitKategori } from "@/lib/data/units";
 import { buildGeneralWaLink } from "@/lib/whatsapp";
 
 type SortOption = "default" | "harga_asc" | "harga_desc" | "nama";
@@ -17,35 +17,23 @@ const TIPE_OPTIONS: { value: "semua" | UnitTipe; label: string }[] = [
   { value: "motor", label: "Motor" },
 ];
 
-const LAYANAN_OPTIONS: { value: "semua" | UnitKategori; label: string }[] = [
-  { value: "semua", label: "Semua Layanan" },
-  { value: "lepas_kunci", label: "Lepas Kunci" },
-  { value: "driver", label: "Dengan Driver" },
-  { value: "keduanya", label: "Keduanya" },
-];
 
 export default function ArmadaClient() {
   const searchParams = useSearchParams();
   const initTipe = (searchParams.get("tipe") as UnitTipe | null) ?? "semua";
-  const initLayanan = (searchParams.get("layanan") as UnitKategori | null) ?? "semua";
 
   const [tipe, setTipe] = useState<"semua" | UnitTipe>(initTipe);
-  const [layanan, setLayanan] = useState<"semua" | UnitKategori>(initLayanan);
   const [sort, setSort] = useState<SortOption>("default");
 
   const filtered = useMemo(() => {
     let units = UNITS.filter((u) => u.tersedia);
     if (tipe !== "semua") units = units.filter((u) => u.tipe === tipe);
-    if (layanan !== "semua") {
-      units = units.filter(
-        (u) => u.kategori === layanan || u.kategori === "keduanya"
-      );
-    }
+
     if (sort === "harga_asc") units = [...units].sort((a, b) => (a.harga ?? 0) - (b.harga ?? 0));
     if (sort === "harga_desc") units = [...units].sort((a, b) => (b.harga ?? 0) - (a.harga ?? 0));
     if (sort === "nama") units = [...units].sort((a, b) => a.nama.localeCompare(b.nama));
     return units;
-  }, [tipe, layanan, sort]);
+  }, [tipe, sort]);
 
   return (
     <div className="min-h-screen bg-surface-100">
@@ -55,7 +43,7 @@ export default function ArmadaClient() {
           <Breadcrumb items={[{ label: "Beranda", href: "/" }, { label: "Armada" }]} />
           <h1 className="text-2xl sm:text-3xl font-bold text-ink-900 mt-3">Armada Kami</h1>
           <p className="text-ink-500 mt-1 text-sm sm:text-base">
-            {UNITS.length} unit tersedia — mobil & motor, lepas kunci & dengan driver
+            {UNITS.length} unit tersedia mobil & motor, lepas kunci & dengan driver
           </p>
         </div>
       </div>
@@ -81,19 +69,7 @@ export default function ArmadaClient() {
               </div>
             </div>
             {/* Layanan */}
-            <div>
-              <p className="text-xs font-medium text-ink-500 mb-2">Layanan</p>
-              <div className="flex flex-wrap gap-2">
-                {LAYANAN_OPTIONS.map((opt) => (
-                  <ChipFilter
-                    key={opt.value}
-                    label={opt.label}
-                    active={layanan === opt.value}
-                    onClick={() => setLayanan(opt.value as "semua" | UnitKategori)}
-                  />
-                ))}
-              </div>
-            </div>
+
             {/* Sort */}
             <div className="ml-auto self-end">
               <select

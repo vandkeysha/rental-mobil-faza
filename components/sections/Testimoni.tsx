@@ -1,10 +1,13 @@
+"use client";
 import { Quote } from "lucide-react";
 import Rating from "@/components/ui/Rating";
 import { TESTIMONIALS } from "@/lib/data/testimonials";
+import { useInView } from "@/hooks/useInView";
 
 export default function Testimoni() {
+  const { ref, inView } = useInView();
   return (
-    <section className="py-16 bg-white">
+    <section ref={ref} className="py-16 bg-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
           <p className="text-sm font-medium text-blue-600 mb-1">Ulasan Pelanggan</p>
@@ -14,10 +17,14 @@ export default function Testimoni() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {TESTIMONIALS.map((t) => (
+          {TESTIMONIALS.map((t, i) => (
             <div
               key={t.id}
-              className="flex flex-col gap-3 p-5 rounded-2xl bg-surface-100 border border-line-200"
+              className="flex flex-col gap-3 p-5 rounded-2xl bg-surface-100 border border-line-200 animate-on-scroll"
+              style={{
+                transitionDelay: `${i * 100}ms`,
+                ...(inView && { opacity: 1, transform: "translateY(0)" }),
+              }}
             >
               <Quote size={20} className="text-blue-300" />
               <p className="text-sm text-ink-700 leading-relaxed flex-1">&ldquo;{t.kutipan}&rdquo;</p>

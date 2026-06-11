@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const unit = getUnitBySlug(slug);
   if (!unit) return {};
   return {
-    title: `${unit.nama} — Rental di Cikarang`,
+    title: `${unit.nama} Rental di Cikarang`,
     description: `Sewa ${unit.nama} di Cikarang. ${unit.deskripsi} Kapasitas ${unit.spesifikasi.kapasitas} orang, transmisi ${unit.spesifikasi.transmisi}.`,
   };
 }

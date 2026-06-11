@@ -1,4 +1,6 @@
+"use client";
 import { Search, ClipboardList, MessageCircle, CheckCircle } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const LANGKAH = [
   {
@@ -28,8 +30,9 @@ const LANGKAH = [
 ];
 
 export default function CaraSewa() {
+  const { ref, inView } = useInView();
   return (
-    <section className="py-16 bg-surface-100">
+    <section ref={ref} className="py-16 bg-surface-100">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
           <p className="text-sm font-medium text-blue-600 mb-1">Proses Mudah</p>
@@ -42,7 +45,14 @@ export default function CaraSewa() {
           {/* Connector line (desktop) */}
           <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-line-200" aria-hidden="true" />
           {LANGKAH.map((step, i) => (
-            <div key={step.nomor} className="flex flex-col items-center text-center gap-3 relative">
+            <div
+              key={step.nomor}
+              className="flex flex-col items-center text-center gap-3 relative animate-on-scroll"
+              style={{
+                transitionDelay: `${i * 150}ms`,
+                ...(inView && { opacity: 1, transform: "translateY(0)" }),
+              }}
+            >
               <div className="relative z-10 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center shadow-card-hover">
                 <step.icon size={26} className="text-white" />
                 <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-blue-500 border-2 border-white text-white text-[10px] font-bold flex items-center justify-center">

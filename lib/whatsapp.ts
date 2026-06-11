@@ -1,4 +1,4 @@
-const WA_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER ?? "6281234567890";
+const WA_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER ?? "6281310988012";
 
 export interface LeadFormData {
   nama: string;

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Hubungi FAZA Rent Car via WhatsApp, telepon, atau email. Kami siap melayani Anda.",
 };
 
-const WA_DISPLAY = process.env.NEXT_PUBLIC_WA_DISPLAY ?? "0812-3456-7890";
+const WA_DISPLAY = process.env.NEXT_PUBLIC_WA_DISPLAY ?? "6281310988012";
 
 export default function KontakPage() {
   return (

@@ -13,11 +13,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "FAZA Rent Car — Rental Mobil & Motor Cikarang",
+    default: "FAZA Rent Car Rental Mobil & Motor Cikarang",
     template: "%s | FAZA Rent Car",
   },
   description:
-    "Rental mobil dan motor terpercaya di Cikarang sejak 2012. PT FAZA Cemerlang Abadi — layanan lepas kunci & dengan driver, armada terawat, harga terbaik.",
+    "Rental mobil dan motor terpercaya di Cikarang sejak 2012. PT FAZA Cemerlang Abadi layanan lepas kunci & dengan driver, armada terawat, harga terbaik.",
   keywords: ["rental mobil cikarang", "sewa motor cikarang", "rental mobil bekasi", "FAZA rent car"],
   openGraph: {
     siteName: "FAZA Rent Car",

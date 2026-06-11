@@ -32,7 +32,7 @@ export default function Footer() {
             />
           </div>
           <p className="text-sm text-white/60 leading-relaxed mb-4">
-            PT FAZA Cemerlang Abadi — Penyedia rental mobil & motor terpercaya di Cikarang sejak 2012.
+            PT FAZA Cemerlang Abadi Penyedia rental mobil & motor terpercaya di Cikarang sejak 2012.
           </p>
           <div className="flex gap-3">
             <a

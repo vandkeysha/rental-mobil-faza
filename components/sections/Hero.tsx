@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { MessageCircle, MapPin, Search } from "lucide-react";
+import { MessageCircle, MapPin } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { ChipFilter } from "@/components/ui/Chip";
 import { buildGeneralWaLink } from "@/lib/whatsapp";
 
 type TipeFilter = "semua" | "mobil" | "motor";
@@ -21,8 +20,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-azure-500 text-white overflow-hidden min-h-[560px] lg:min-h-[620px]">
-      {/* Vehicle image — shifted right so black SUV is half-cropped at the edge */}
+    <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-azure-500 text-white overflow-hidden min-h-[680px] lg:min-h-[620px]">
+
+      {/* Gambar desktop */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/hero-kendaraan.svg"
@@ -32,26 +32,38 @@ export default function Hero() {
         style={{ right: "-12%" }}
       />
 
+      {/* Gambar mobile */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/hero-kendaraan.svg"
+        alt=""
+        aria-hidden="true"
+        className="lg:hidden absolute -bottom-4 left-1/2 -translate-x-1/2 w-[85%] max-w-sm pointer-events-none select-none opacity-40"
+      />
+
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
         <div className="lg:max-w-[52%]">
+
           {/* Micro-trust */}
-          <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-4 py-1.5 text-sm font-medium mb-6 hero-badge">
             <MapPin size={14} />
             Cikarang, Bekasi & Sekitarnya
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 hero-title">
             Rental Mobil & Motor<br />
             <span className="text-blue-100">Terpercaya di Cikarang</span>
           </h1>
-          <p className="text-base sm:text-lg text-blue-100 leading-relaxed mb-14 max-w-xl">
+
+          {/* Deskripsi */}
+          <p className="text-base sm:text-lg text-blue-100 leading-relaxed mb-9 max-w-xl hero-desc">
             Armada terawat, proses mudah, layanan profesional sejak 2012.
-            Lepas kunci maupun dengan driver — siap melayani kebutuhan Anda.
+            Lepas kunci maupun dengan driver siap melayani kebutuhan Anda.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 pb-4">
+          <div className="flex flex-col sm:flex-row gap-3 pb-4 hero-cta">
             <Link href={buildArmadaLink()}>
               <Button variant="white" size="lg" className="w-full sm:w-auto shadow-card-hover">
                 Lihat Armada
@@ -64,6 +76,7 @@ export default function Hero() {
               </Button>
             </a>
           </div>
+
         </div>
       </div>
     </section>

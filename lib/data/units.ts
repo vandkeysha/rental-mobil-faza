@@ -26,6 +26,8 @@ export interface Unit {
 
 export const UNITS: Unit[] = [
   // ── MOBIL ───────────────────────────────────────────────────────────────
+
+  // avanza
   {
     id: "avanza-at",
     slug: "toyota-avanza-at",
@@ -40,10 +42,12 @@ export const UNITS: Unit[] = [
       fitur: ["AC", "Power Steering", "Audio System", "Central Lock"],
     },
     deskripsi: "Ideal untuk keluarga & perjalanan kota, nyaman untuk 7 penumpang.",
-    foto: ["/media/mobil/avanza.jpg", "/media/mobil/mobil-extra-01.jpg", "/media/mobil/mobil-extra-02.jpg"],
+    foto: ["/media/mobil/avanza/avanza2.jpg", "/media/mobil/avanza/avanza3.png", "/media/mobil/avanza/avanza4.png", "/media/mobil/avanza/avanza5.png", "/media/mobil/avanza/avanza6.png", "/media/mobil/avanza/avanza7.png"],
     unggulan: true,
     tersedia: true,
   },
+
+  // brio
   {
     id: "brio-satya",
     slug: "honda-brio-satya",
@@ -58,10 +62,12 @@ export const UNITS: Unit[] = [
       fitur: ["AC", "Audio System", "Power Window"],
     },
     deskripsi: "Lincah di jalanan kota, irit BBM, cocok untuk mobilitas harian.",
-    foto: ["/media/mobil/brio.jpg", "/media/mobil/mobil-extra-03.jpg", "/media/mobil/mobil-extra-04.jpg"],
+    foto: ["/media/mobil/brio/brio.jpg", "/media/mobil/brio/brio1.png", "/media/mobil/brio/brio2.png", "/media/mobil/brio/brio3.png", "/media/mobil/brio/brio4.png"],
     unggulan: true,
     tersedia: true,
   },
+
+  // innova
   {
     id: "innova-reborn",
     slug: "toyota-innova-reborn-mt",
@@ -76,10 +82,12 @@ export const UNITS: Unit[] = [
       fitur: ["AC Double Blower", "Airbag", "Audio System", "Power Steering"],
     },
     deskripsi: "MPV premium untuk keluarga besar & kunjungan bisnis klien.",
-    foto: ["/media/mobil/innova.jpg", "/media/mobil/mobil-extra-05.jpg", "/media/mobil/mobil-extra-06.jpg"],
+    foto: ["/media/mobil/innova/innova.jpg", "/media/mobil/innova/innova1.jpg", "/media/mobil/innova/innova2.png", "/media/mobil/innova/innova3.png", "/media/mobil/innova/innova4.png"],
     unggulan: true,
     tersedia: true,
   },
+
+  // pajero
   {
     id: "pajero-dakar",
     slug: "mitsubishi-pajero-dakar-at",
@@ -94,10 +102,12 @@ export const UNITS: Unit[] = [
       fitur: ["Sunroof", "360 Camera", "Leather Seat", "Keyless Entry"],
     },
     deskripsi: "SUV mewah diesel untuk perjalanan jauh & medan berat.",
-    foto: ["/media/mobil/pajero.jpg", "/media/mobil/mobil-extra-07.jpg", "/media/mobil/mobil-extra-08.jpg"],
+    foto: ["/media/mobil/pajero/pajero.jpg", "/media/mobil/pajero/pajero1.png", "/media/mobil/pajero/pajero2.png", "/media/mobil/pajero/pajero3.png", "/media/mobil/pajero/pajero4.png", "/media/mobil/pajero/pajero5.png", "/media/mobil/pajero/pajero6.png"],
     unggulan: true,
     tersedia: true,
   },
+
+  // fortuner
   {
     id: "fortuner-gr",
     slug: "toyota-fortuner-gr-at",
@@ -112,10 +122,12 @@ export const UNITS: Unit[] = [
       fitur: ["GR Sport", "Leather Seat", "TSS", "360 Camera"],
     },
     deskripsi: "Tampilan sporty & bertenaga, ideal representasi bisnis.",
-    foto: ["/media/mobil/fortuner.jpg", "/media/mobil/mobil-extra-09.jpg", "/media/mobil/mobil-extra-10.jpg"],
+    foto: ["/media/mobil/fortuner/fortuner.jpeg", "/media/mobil/fortuner/fortuner.jpg", "/media/mobil/fortuner/fortuner2.jpg", "/media/mobil/fortuner/fortuner3.jpg", "/media/mobil/fortuner/fortuner4.png", "/media/mobil/fortuner/fortuner5.png"],
     unggulan: false,
     tersedia: true,
   },
+
+  // alphard
   {
     id: "toyota-alphard",
     slug: "toyota-alphard",
@@ -130,12 +142,14 @@ export const UNITS: Unit[] = [
       fitur: ["Captain Seat", "Sunroof", "Electric Door", "Wood Trim", "AC Multi Zone"],
     },
     deskripsi: "MPV mewah premium untuk perjalanan VIP, bandara, dan acara korporat.",
-    foto: ["/media/mobil/alphard.jpg", "/media/mobil/mobil-extra-11.jpg", "/media/mobil/mobil-extra-12.jpg"],
+    foto: ["/media/mobil/alphard/alphard.jpg", "/media/mobil/alphard/alphard1.jpg", "/media/mobil/alphard/alphard3.jpg", "/media/mobil/alphard/alphard4.jpg", "/media/mobil/alphard/alphard5.jpg", "/media/mobil/alphard/alphard6.jpg", "/media/mobil/alphard/alphard7.jpg", "/media/mobil/alphard/alphard8.jpg", "/media/mobil/alphard/alphard9.jpg","/media/mobil/alphard/alphard10.jpg", "/media/mobil/alphard/alphard11.jpg", "/media/mobil/alphard/Toyota Voxy.jpg"],
     unggulan: true,
     tersedia: true,
   },
 
   // ── MOTOR ───────────────────────────────────────────────────────────────
+
+  // scoopy
   {
     id: "honda-scoopy",
     slug: "honda-scoopy",
@@ -156,6 +170,8 @@ export const UNITS: Unit[] = [
     unggulan: true,
     tersedia: true,
   },
+
+  // beat
   {
     id: "honda-beat",
     slug: "honda-beat",
@@ -176,6 +192,8 @@ export const UNITS: Unit[] = [
     unggulan: true,
     tersedia: true,
   },
+
+  // fazzio
   {
     id: "yamaha-fazzio",
     slug: "yamaha-fazzio",
@@ -196,6 +214,8 @@ export const UNITS: Unit[] = [
     unggulan: true,
     tersedia: true,
   },
+
+  // nmax
   {
     id: "yamaha-nmax",
     slug: "yamaha-nmax",
@@ -216,6 +236,8 @@ export const UNITS: Unit[] = [
     unggulan: true,
     tersedia: true,
   },
+
+  // pcx
   {
     id: "honda-pcx",
     slug: "honda-pcx",
@@ -233,46 +255,6 @@ export const UNITS: Unit[] = [
     },
     deskripsi: "Premium scooter dengan storage besar dan fitur modern.",
     foto: ["/media/motor/pcx.jpg", "/media/motor/motor-extra-09.jpg", "/media/motor/motor-extra-10.jpg"],
-    unggulan: false,
-    tersedia: true,
-  },
-  {
-    id: "honda-stylo",
-    slug: "honda-stylo-160",
-    nama: "Honda Stylo 160",
-    tipe: "motor",
-    kategori: "lepas_kunci",
-    harga: 200000,
-    hargaLabel: "Rp200.000/hari",
-    spesifikasi: {
-      kapasitas: 2,
-      transmisi: "Matic",
-      bbm: "Bensin",
-      tahun: 2024,
-      fitur: ["Helm", "Jas Hujan", "TFT Display"],
-    },
-    deskripsi: "Motor retro premium terbaru, tampil beda di jalan.",
-    foto: ["/media/motor/stylo.jpg", "/media/motor/motor-extra-11.jpg", "/media/motor/motor-extra-12.jpg"],
-    unggulan: false,
-    tersedia: true,
-  },
-  {
-    id: "yamaha-xmax",
-    slug: "yamaha-xmax-250",
-    nama: "Yamaha X-Max 250",
-    tipe: "motor",
-    kategori: "lepas_kunci",
-    harga: 350000,
-    hargaLabel: "Rp350.000/hari",
-    spesifikasi: {
-      kapasitas: 2,
-      transmisi: "Matic",
-      bbm: "Bensin",
-      tahun: 2023,
-      fitur: ["Helm", "Jas Hujan", "Smart Key", "TFT Display"],
-    },
-    deskripsi: "Big scooter premium untuk touring nyaman jarak jauh.",
-    foto: ["/media/motor/xmax.jpg", "/media/motor/motor-extra-13.jpg", "/media/motor/motor-extra-14.jpg"],
     unggulan: false,
     tersedia: true,
   },

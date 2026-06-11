@@ -1,4 +1,6 @@
+"use client";
 import { MapPin, AlertCircle } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const AREA_ITEMS = [
   { nama: "Cikarang Utara", biaya: "Gratis" },
@@ -12,8 +14,9 @@ const AREA_ITEMS = [
 ];
 
 export default function AreaLayanan() {
+  const { ref, inView } = useInView();
   return (
-    <section className="py-16 bg-surface-100">
+    <section ref={ref} className="py-16 bg-surface-100">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
           <p className="text-sm font-medium text-blue-600 mb-1">Jangkauan Layanan</p>
@@ -23,13 +26,21 @@ export default function AreaLayanan() {
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
           {/* Area list */}
-          <div>
+          <div
+            className="animate-on-scroll"
+            style={{ ...(inView && { opacity: 1, transform: "translateY(0)" }) }}
+          >
             <div className="grid grid-cols-2 gap-3">
-              {AREA_ITEMS.map((area) => (
+              {AREA_ITEMS.map((area, i) => (
                 <div
                   key={area.nama}
-                  className="flex items-center justify-between gap-2 p-3 rounded-xl bg-white border border-line-200"
+                  className="flex items-center justify-between gap-2 p-3 rounded-xl bg-white border border-line-200 animate-on-scroll"
+                  style={{
+                    transitionDelay: `${i * 60}ms`,
+                    ...(inView && { opacity: 1, transform: "translateY(0)" }),
+                  }}
                 >
                   <div className="flex items-center gap-2 text-sm text-ink-700">
                     <MapPin size={14} className="text-blue-500 shrink-0" />
@@ -55,8 +66,14 @@ export default function AreaLayanan() {
             </div>
           </div>
 
-          {/* Map embed placeholder */}
-          <div className="rounded-2xl overflow-hidden border border-line-200 bg-white shadow-card h-64 lg:h-full min-h-48">
+          {/* Map */}
+          <div
+            className="rounded-2xl overflow-hidden border border-line-200 bg-white shadow-card h-64 lg:h-full min-h-48 animate-on-scroll"
+            style={{
+              transitionDelay: "200ms",
+              ...(inView && { opacity: 1, transform: "translateY(0)" }),
+            }}
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126579.08780074!2d107.07899!3d-6.34407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698f14e7d4e3e5%3A0x6e9d0e8e5a8e!2sCikarang%2C%20Bekasi!5e0!3m2!1sen!2sid!4v1234567890"
               width="100%"
@@ -69,6 +86,7 @@ export default function AreaLayanan() {
               className="w-full h-full"
             />
           </div>
+
         </div>
       </div>
     </section>

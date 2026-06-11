@@ -123,7 +123,7 @@ export default function DetailUnitClient({ unit }: Props) {
                   Book / Rental Sekarang
                 </Button>
                 <a href={buildQuickWaLink(unit.nama)} target="_blank" rel="noopener noreferrer">
-                  <Button variant="whatsapp" size="md" fullWidth>
+                  <Button variant="whatsapp" size="lg" fullWidth>
                     <MessageCircle size={16} />
                     Chat Cepat WhatsApp
                   </Button>
