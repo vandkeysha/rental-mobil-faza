@@ -66,11 +66,11 @@ export default async function BlogDetailPage({ params }: Props) {
       </div>
 
       {/* ── Layout ── */}
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8">
-        <div className="flex gap-8 items-start relative">
+       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8 h-[calc(100vh-100px)]">
+      <div className="grid lg:grid-cols-[1fr_280px] gap-8 h-full">
 
           {/* ══════════════ MAIN ══════════════ */}
-          <div className="flex-1 min-w-0">
+          <div className="min-w-0 overflow-y-auto pr-2 h-full">
 
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-2.5 mb-4">
@@ -228,65 +228,73 @@ export default async function BlogDetailPage({ params }: Props) {
           </div>
 
           {/* ══════════════ SIDEBAR ══════════════ */}
-        <aside className="hidden lg:flex flex-col gap-5 w-[280px] shrink-0 sticky top-24 self-start">
-            {/* Author / CTA card */}
-            <div className="bg-white rounded-2xl border border-line-200 p-5">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold shrink-0">
-                  F
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-ink-800">
-                    Tim FAZA Rent Car
-                  </p>
-                  <p className="text-xs text-ink-400">{article.tanggal}</p>
-                </div>
-              </div>
-              <a
-                href={buildGeneralWaLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white text-sm font-semibold rounded-xl py-2.5 transition-colors"
-              >
-                <MessageCircle size={15} />
-                Chat WhatsApp
-              </a>
-            </div>
-
-            {/* Artikel lainnya */}
-            {related.length > 0 && (
+         <aside className="hidden lg:block h-fit">
+            <div className="space-y-5">
+              {/* Author / CTA card */}
               <div className="bg-white rounded-2xl border border-line-200 p-5">
-                <h3 className="text-sm font-bold text-ink-800 mb-4">
-                  Artikel Lainnya
-                </h3>
-                <div className="space-y-3">
-                  {related.map((a) => (
-                    <Link
-                      key={a.slug}
-                      href={`/blog/${a.slug}`}
-                      className="group flex gap-3 items-start hover:bg-surface-100 rounded-xl p-2 -mx-2 transition-colors"
-                    >
-                      <div
-                        className={`shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${
-                          a.coverGradient ?? "from-blue-500 to-blue-400"
-                        } flex items-center justify-center text-xl`}
-                      >
-                        {a.coverEmoji ?? "📰"}
-                      </div>
-                      <div className="min-w-0">
-                        <span className="text-[10px] font-semibold text-ink-400 uppercase tracking-wide">
-                          {a.kategori}
-                        </span>
-                        <p className="text-xs font-semibold text-ink-800 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2 mt-0.5">
-                          {a.judul}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold shrink-0">
+                    F
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-semibold text-ink-800">
+                      Tim FAZA Rent Car
+                    </p>
+                    <p className="text-xs text-ink-400">{article.tanggal}</p>
+                  </div>
                 </div>
+
+                <a
+                  href={buildGeneralWaLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white text-sm font-semibold rounded-xl py-2.5 transition-colors"
+                >
+                  <MessageCircle size={15} />
+                  Chat WhatsApp
+                </a>
               </div>
-            )}
+
+              {/* Artikel lainnya */}
+              {related.length > 0 && (
+                <div className="bg-white rounded-2xl border border-line-200 p-5">
+                  <h3 className="text-sm font-bold text-ink-800 mb-4">
+                    Artikel Lainnya
+                  </h3>
+
+                  <div className="space-y-3">
+                    {related.map((a) => (
+                      <Link
+                        key={a.slug}
+                        href={`/blog/${a.slug}`}
+                        className="group flex gap-3 items-start hover:bg-surface-100 rounded-xl p-2 -mx-2 transition-colors"
+                      >
+                        <div
+                          className={`shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${
+                            a.coverGradient ?? "from-blue-500 to-blue-400"
+                          } flex items-center justify-center text-xl`}
+                        >
+                          {a.coverEmoji ?? "📰"}
+                        </div>
+
+                        <div className="min-w-0">
+                          <span className="text-[10px] font-semibold text-ink-400 uppercase tracking-wide">
+                            {a.kategori}
+                          </span>
+
+                          <p className="text-xs font-semibold text-ink-800 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2 mt-0.5">
+                            {a.judul}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </aside>
+
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
+"use client";
 import Accordion from "@/components/ui/Accordion";
+import { useInView } from "@/hooks/useInView";
 
 const FAQ_ITEMS = [
   {
@@ -34,16 +36,30 @@ const FAQ_ITEMS = [
 ];
 
 export default function FAQ() {
+  const { ref, inView } = useInView();
   return (
-    <section className="py-16 bg-white">
+    <section ref={ref} className="py-16 bg-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
+          <div
+            className="text-center mb-10 animate-on-scroll"
+            style={{ ...(inView && { opacity: 1, transform: "translateY(0)" }) }}
+          >
             <p className="text-sm font-medium text-blue-600 mb-1">Pertanyaan Umum</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-ink-900">FAQ</h2>
-            <p className="mt-2 text-ink-500 text-sm sm:text-base">Jawaban untuk pertanyaan yang paling sering ditanyakan.</p>
+            <p className="mt-2 text-ink-500 text-sm sm:text-base">
+              Jawaban untuk pertanyaan yang paling sering ditanyakan.
+            </p>
           </div>
-          <Accordion items={FAQ_ITEMS} />
+          <div
+            className="animate-on-scroll"
+            style={{
+              transitionDelay: "150ms",
+              ...(inView && { opacity: 1, transform: "translateY(0)" }),
+            }}
+          >
+            <Accordion items={FAQ_ITEMS} />
+          </div>
         </div>
       </div>
     </section>
