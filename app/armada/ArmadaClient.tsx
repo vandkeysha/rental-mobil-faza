@@ -8,6 +8,7 @@ import { ChipFilter } from "@/components/ui/Chip";
 import Button from "@/components/ui/Button";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { buildGeneralWaLink } from "@/lib/whatsapp";
+import { useInView } from "@/hooks/useInView";
 
 type SortOption = "default" | "harga_asc" | "harga_desc" | "nama";
 
@@ -17,13 +18,13 @@ const TIPE_OPTIONS: { value: "semua" | UnitTipe; label: string }[] = [
   { value: "motor", label: "Motor" },
 ];
 
-
 export default function ArmadaClient() {
   const searchParams = useSearchParams();
   const initTipe = (searchParams.get("tipe") as UnitTipe | null) ?? "semua";
 
   const [tipe, setTipe] = useState<"semua" | UnitTipe>(initTipe);
   const [sort, setSort] = useState<SortOption>("default");
+  const { ref, inView } = useInView(0.05);
 
   const filtered = useMemo(() => {
     let units = UNITS.filter((u) => u.tersedia);
@@ -50,9 +51,11 @@ export default function ArmadaClient() {
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8">
         {/* Filter bar */}
-        <div className="bg-white rounded-2xl border border-line-200 p-4 mb-6">
+        <div
+          className="bg-white rounded-2xl border border-line-200 p-4 mb-6 animate-on-scroll"
+          style={{ ...(inView && { opacity: 1, transform: "translateY(0)" }) }}
+        >
           <div className="flex flex-wrap gap-4">
-            {/* Tipe */}
             <div>
               <p className="text-xs font-medium text-ink-500 mb-2 flex items-center gap-1">
                 <SlidersHorizontal size={12} /> Tipe
@@ -68,9 +71,6 @@ export default function ArmadaClient() {
                 ))}
               </div>
             </div>
-            {/* Layanan */}
-
-            {/* Sort */}
             <div className="ml-auto self-end">
               <select
                 value={sort}
@@ -100,14 +100,31 @@ export default function ArmadaClient() {
             </a>
           </div>
         ) : (
-          <>
-            <p className="text-sm text-ink-500 mb-4">{filtered.length} unit ditemukan</p>
+          <section ref={ref}>
+            <p
+              className="text-sm text-ink-500 mb-4 animate-on-scroll"
+              style={{
+                transitionDelay: "100ms",
+                ...(inView && { opacity: 1, transform: "translateY(0)" }),
+              }}
+            >
+              {filtered.length} unit ditemukan
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-              {filtered.map((unit) => (
-                <UnitCard key={unit.id} unit={unit} />
+              {filtered.map((unit, i) => (
+                <div
+                  key={unit.id}
+                  className="animate-on-scroll"
+                  style={{
+                    transitionDelay: `${i * 60}ms`,
+                    ...(inView && { opacity: 1, transform: "translateY(0)" }),
+                  }}
+                >
+                  <UnitCard unit={unit} />
+                </div>
               ))}
             </div>
-          </>
+          </section>
         )}
       </div>
     </div>
