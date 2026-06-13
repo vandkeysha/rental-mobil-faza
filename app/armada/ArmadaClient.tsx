@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { MessageCircle, SlidersHorizontal } from "lucide-react";
+import { MessageCircle,SlidersHorizontal,ChevronDown,} from "lucide-react";
 import UnitCard from "@/components/ui/UnitCard";
 import { UNITS, type UnitTipe } from "@/lib/data/units";
 import { ChipFilter } from "@/components/ui/Chip";
@@ -50,41 +50,84 @@ export default function ArmadaClient() {
       </div>
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8">
-        {/* Filter bar */}
-        <div
-          className="bg-white rounded-2xl border border-line-200 p-4 mb-6 animate-on-scroll"
-          style={{ ...(inView && { opacity: 1, transform: "translateY(0)" }) }}
-        >
-          <div className="flex flex-wrap gap-4">
-            <div>
-              <p className="text-xs font-medium text-ink-500 mb-2 flex items-center gap-1">
-                <SlidersHorizontal size={12} /> Tipe
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {TIPE_OPTIONS.map((opt) => (
-                  <ChipFilter
-                    key={opt.value}
-                    label={opt.label}
-                    active={tipe === opt.value}
-                    onClick={() => setTipe(opt.value as "semua" | UnitTipe)}
-                  />
-                ))}
+
+          {/* Filter */}
+          <div
+            className="bg-white rounded-2xl border border-line-200 p-4 sm:p-5 mb-6 animate-on-scroll"
+            style={{
+              ...(inView && {
+                opacity: 1,
+                transform: "translateY(0)",
+              }),
+            }}
+          >
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+              <div>
+                <p className="text-xs font-medium text-ink-500 mb-2 flex items-center gap-1">
+                  <SlidersHorizontal size={14} />
+                  Tipe Kendaraan
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {TIPE_OPTIONS.map((opt) => (
+                    <ChipFilter
+                      key={opt.value}
+                      label={opt.label}
+                      active={tipe === opt.value}
+                      onClick={() =>
+                        setTipe(opt.value as "semua" | UnitTipe)
+                      }
+                    />
+                  ))}
+                </div>
               </div>
+
+             <div className="relative self-start lg:self-auto">
+            <select
+              value={sort}
+              onChange={(e) =>
+                setSort(e.target.value as SortOption)
+              }
+              className="
+                appearance-none
+                h-10
+                min-w-[240px]
+                rounded-full
+                border
+                border-line-200
+                bg-white
+                pl-4
+                pr-14
+                text-sm
+                text-ink-700
+                focus:border-azure-500
+                focus:ring-2
+                focus:ring-azure-500/20
+                outline-none
+                cursor-pointer
+              "
+            >
+              <option value="default">Urutan Default</option>
+              <option value="harga_asc">Harga Terendah</option>
+              <option value="harga_desc">Harga Tertinggi</option>
+              <option value="nama">Nama A–Z</option>
+            </select>
+
+              <ChevronDown
+                size={18}
+                className="
+                  pointer-events-none
+                  absolute
+                  right-6
+                  top-1/2
+                  -translate-y-1/2
+                  text-ink-500
+                "
+              />
             </div>
-            <div className="ml-auto self-end">
-              <select
-                value={sort}
-                onChange={(e) => setSort(e.target.value as SortOption)}
-                className="h-9 px-3 rounded-lg border border-line-200 text-sm text-ink-700 bg-white focus:border-azure-500 focus:ring-2 focus:ring-azure-500/20 outline-none cursor-pointer"
-              >
-                <option value="default">Urutan default</option>
-                <option value="harga_asc">Harga: rendah ke tinggi</option>
-                <option value="harga_desc">Harga: tinggi ke rendah</option>
-                <option value="nama">Nama A–Z</option>
-              </select>
+
             </div>
           </div>
-        </div>
 
         {/* Results */}
         {filtered.length === 0 ? (
@@ -110,7 +153,8 @@ export default function ArmadaClient() {
             >
               {filtered.length} unit ditemukan
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {/* Grid: 2 kolom dari mobile, 3 di tablet, 4 di desktop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {filtered.map((unit, i) => (
                 <div
                   key={unit.id}
