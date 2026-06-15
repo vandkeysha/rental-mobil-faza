@@ -32,7 +32,7 @@ export default function Footer() {
             <Image src="/logo.svg" alt="FAZA Rent Car" width={120} height={66} unoptimized className="h-9 w-auto" />
           </div>
           <p className="text-sm text-white/60 leading-relaxed mb-4">
-            PT FAZA Cemerlang Abadi Penyedia rental mobil & motor terpercaya di Cikarang sejak 2012.
+            PT FAZA Cemerlang Abadi Penyedia rental mobil & motor terpercaya di Cikarang sejak 2022.
           </p>
           <div className="flex gap-3">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors" aria-label="Instagram">

@@ -6,10 +6,8 @@ import { buildGeneralWaLink } from "@/lib/whatsapp";
 import { useInView } from "@/hooks/useInView";
 
 const MILESTONES = [
-  { tahun: "2012", keterangan: "FAZA Rent Car berdiri di Cikarang" },
-  { tahun: "2015", keterangan: "Ekspansi armada ke 20+ unit" },
-  { tahun: "2018", keterangan: "Resmi berbadan hukum PT FAZA Cemerlang Abadi" },
-  { tahun: "2023", keterangan: "Melayani 1.000+ penyewa setia per tahun" },
+  { tahun: "2022", keterangan: "FAZA Rent Car berdiri di Cikarang" },
+  { tahun: "2026", keterangan: "Melayani 1.000+ penyewa setia per tahun" },
 ];
 
 export default function TentangClient() {
@@ -31,7 +29,7 @@ const { ref: refCta, inView: inViewCta } = useInView();
           <h2 className="text-2xl font-bold text-ink-900 mb-4">Siapa Kami</h2>
           <p className="text-ink-700 leading-relaxed mb-4">
             FAZA Rent Car adalah penyedia layanan rental mobil dan motor di Cikarang dan sekitarnya.
-            Berdiri sejak 2012 dan resmi terdaftar sebagai PT FAZA Cemerlang Abadi, kami telah
+            Berdiri sejak 2022 dan resmi terdaftar sebagai PT FAZA Cemerlang Abadi, kami telah
             melayani ribuan pelanggan dari kalangan perseorangan, keluarga, hingga perusahaan.
           </p>
           <p className="text-ink-700 leading-relaxed">
@@ -43,7 +41,7 @@ const { ref: refCta, inView: inViewCta } = useInView();
         <div className="grid grid-cols-2 gap-4">
           {[
             { icon: Shield, label: "Legalitas Resmi", value: "PT terdaftar" },
-            { icon: Calendar, label: "Pengalaman", value: "Sejak 2012" },
+            { icon: Calendar, label: "Pengalaman", value: "Sejak 2022" },
             { icon: Users, label: "Pelanggan", value: "1.000+ penyewa" },
             { icon: Award, label: "Rating", value: "4.9 ★ Google" },
           ].map((item, i) => (

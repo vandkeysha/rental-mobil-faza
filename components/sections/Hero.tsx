@@ -58,7 +58,7 @@ export default function Hero() {
 
           {/* Deskripsi */}
           <p className="text-base sm:text-lg text-blue-100 leading-relaxed mb-9 max-w-xl hero-desc">
-            Armada terawat, proses mudah, layanan profesional sejak 2012.
+            Armada terawat, proses mudah, layanan profesional sejak 2022.
             Lepas kunci maupun dengan driver siap melayani kebutuhan Anda.
           </p>
 

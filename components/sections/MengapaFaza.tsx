@@ -21,7 +21,7 @@ const KEUNGGULAN = [
   {
     icon: Sparkles,
     judul: "Kualitas Terjamin",
-    deskripsi: "Berdiri sejak 2012 dengan ratusan ulasan bintang 5. PT resmi dengan legalitas lengkap.",
+    deskripsi: "Berdiri sejak 2022 dengan ratusan ulasan bintang 5. PT resmi dengan legalitas lengkap.",
   },
 ];
 

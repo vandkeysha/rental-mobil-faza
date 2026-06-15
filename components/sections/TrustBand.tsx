@@ -3,7 +3,7 @@ import { Shield, Calendar, Star, Users } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 const TRUST_ITEMS = [
   { icon: Shield, label: "Legalitas PT", value: "PT FAZA Cemerlang Abadi" },
-  { icon: Calendar, label: "Berdiri Sejak", value: "Tahun 2012" },
+  { icon: Calendar, label: "Berdiri Sejak", value: "Tahun 2022" },
   { icon: Star, label: "Rating Google", value: "4.9 ★ (200+ ulasan)" },
   { icon: Users, label: "Pelanggan Puas", value: "1.000+ Penyewa" },
 ];

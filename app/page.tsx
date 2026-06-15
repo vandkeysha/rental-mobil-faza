@@ -12,7 +12,7 @@ import CTABanner from "@/components/sections/CTABanner";
 export const metadata: Metadata = {
   title: "FAZA Rent Car — Rental Mobil & Motor Cikarang Terpercaya",
   description:
-    "Rental mobil dan motor terpercaya di Cikarang sejak 2012. Armada lengkap, lepas kunci & dengan driver, proses mudah via WhatsApp.",
+    "Rental mobil dan motor terpercaya di Cikarang sejak 2022. Armada lengkap, lepas kunci & dengan driver, proses mudah via WhatsApp.",
 };
 
 export default function HomePage() {
