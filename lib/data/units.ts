@@ -83,7 +83,7 @@ export const UNITS: Unit[] = [
     },
     deskripsi: "MPV premium untuk keluarga besar & kunjungan bisnis klien.",
     foto: ["/media/mobil/innova/innova revisi1 (1).png","/media/mobil/innova/Innova revisi2.png" ,"/media/mobil/innova/innova2.png", "/media/mobil/innova/innova3.png", "/media/mobil/innova/innova4.png"],
-    unggulan: true,
+    unggulan: false,
     tersedia: true,
   },
 
@@ -164,6 +164,40 @@ export const UNITS: Unit[] = [
   deskripsi: "Minibus kapasitas besar ideal untuk rombongan, wisata, dan perjalanan korporat.",
   foto: ["/media/mobil/hiAce-premio/hiace revisi.png","/media/mobil/hiAce-premio/hiace revisi1.png","/media/mobil/hiAce-premio/hiAce.png","/media/mobil/hiAce-premio/hiAce2.png","/media/mobil/hiAce-premio/hiAce3.png","/media/mobil/hiAce-premio/hiAce4.png","/media/mobil/hiAce-premio/hiAce5.png"],
   unggulan: false,
+  tersedia: true,
+},
+
+// mercy
+{
+  id: "mercedes-s450",
+  slug: "mercedes-s450",
+  nama: "Mercedes-Benz S450",
+  tipe: "mobil",
+  kategori: "driver",
+  spesifikasi: {
+    kapasitas: 4,
+    transmisi: "Automatic",
+    bbm: "Bensin",
+    tahun: 2022,
+    fitur: [
+      "Executive Rear Seat",
+      "Panoramic Sunroof",
+      "Ambient Lighting",
+      "Massage Seat",
+      "Premium Sound System",
+      "Electric Seat"
+    ],
+  },
+  deskripsi:
+    "Sedan mewah premium untuk perjalanan VIP, tamu eksekutif, wedding, dan acara eksklusif dengan kenyamanan kelas atas.",
+  foto: [
+    "/media/mobil/mercy/mercy1.png",
+    "/media/mobil/mercy/mercy.png",
+    "/media/mobil/mercy/mercy2.png",
+    "/media/mobil/mercy/mercy3.png",
+    "/media/mobil/mercy/mercy4.png"
+  ],
+  unggulan: true,
   tersedia: true,
 },
 
