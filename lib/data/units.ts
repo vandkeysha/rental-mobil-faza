@@ -186,7 +186,7 @@ export const UNITS: Unit[] = [
       fitur: ["Helm", "Jas Hujan"],
     },
     deskripsi: "Motor matic stylish untuk mobilitas harian di Cikarang.",
-    foto: ["/media/motor/scoopy/scoopy.jpg", "/media/motor/scoopy/scoopy1.jpg", "/media/motor/scoopy/scoopy4.jpg", "/media/motor/scoopy/scoopy6.jpg", "/media/motor/scoopy/scoopy7.jpg", "/media/motor/scoopy/scoopy8.jpg", "/media/motor/scoopy/scoopy9.jpg"],
+    foto: ["/media/motor/scoopy2026/scoopy.jpg", "/media/motor/scoopy2026/scoopy1.jpg", "/media/motor/scoopy2026/scoopy4.jpg", "/media/motor/scoopy2026/scoopy6.jpg", "/media/motor/scoopy2026/scoopy7.jpg", "/media/motor/scoopy2026/scoopy8.jpg", "/media/motor/scoopy2026/scoopy9.jpg"],
     unggulan: true,
     tersedia: true,
   },
