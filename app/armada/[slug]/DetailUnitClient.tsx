@@ -155,6 +155,86 @@ export default function DetailUnitClient({ unit }: Props) {
             </div>
           </section>
 
+{/* ── Informasi Tambahan (khusus motor) ── */}
+{unit.tipe === "motor" && (
+  <section className="mb-10">
+    <h2 className="text-xl font-bold text-ink-900 mb-3">Informasi Tambahan</h2>
+    <div className="bg-white rounded-2xl border border-line-200 p-6 space-y-6">
+
+      {/* Harga wilayah */}
+      <div className="flex items-start gap-2">
+        <CheckCircle size={15} className="text-success mt-0.5 shrink-0" />
+        <span className="text-sm text-ink-700">Harga untuk wilayah Cikarang</span>
+      </div>
+
+      {/* Biaya keluar kota */}
+      <div className="flex items-start gap-2">
+        <CheckCircle size={15} className="text-success mt-0.5 shrink-0" />
+        <div className="flex-1">
+          <p className="text-sm font-medium text-ink-700 mb-3">Tambahan/hari biaya keluar kota:</p>
+          <div className="rounded-xl border border-line-200 overflow-hidden">
+            <table className="w-full text-sm">
+              <tbody>
+                {[
+                  ["Bekasi", "Rp 15.000"],
+                  ["Kerawang, Bogor, Jakarta", "Rp 30.000"],
+                  ["Purwakarta", "Rp 30.000"],
+                  ["Serang Banten", "Rp 50.000"],
+                  ["Bandung", "Rp 50.000"],
+                ].map(([kota, harga], i, arr) => (
+                  <tr key={kota} className={i !== arr.length - 1 ? "border-b border-line-200" : ""}>
+                    <td className="px-4 py-2.5 text-ink-700">{kota}</td>
+                    <td className="px-4 py-2.5 text-ink-700 text-right font-medium">{harga}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      {/* Helm */}
+      <div className="flex items-start gap-2">
+        <CheckCircle size={15} className="text-success mt-0.5 shrink-0" />
+        <span className="text-sm text-ink-700">1 kendaraan dengan 1 helm</span>
+      </div>
+
+      <div className="flex items-start gap-2">
+        <CheckCircle size={15} className="text-success mt-0.5 shrink-0" />
+        <span className="text-sm text-ink-700">Tambah helm Rp 10.000/hari</span>
+      </div>
+
+      {/* Antar jemput */}
+      <div className="flex items-start gap-2">
+        <CheckCircle size={15} className="text-success mt-0.5 shrink-0" />
+        <div className="flex-1">
+          <p className="text-sm font-medium text-ink-700 mb-3">Antar jemput kendaraan dikenakan biaya sesuai lokasi tujuan:</p>
+          <div className="rounded-xl border border-line-200 overflow-hidden">
+            <table className="w-full text-sm">
+              <tbody>
+                {[
+                  ["Motor Kecil", "Rp 5.000/km"],
+                  ["Motor Besar", "Rp 7.000/km"],
+                ].map(([tipe, harga], i, arr) => (
+                  <tr key={tipe} className={i !== arr.length - 1 ? "border-b border-line-200" : ""}>
+                    <td className="px-4 py-2.5 text-ink-700">{tipe}</td>
+                    <td className="px-4 py-2.5 text-ink-700 text-right font-medium">{harga}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-ink-500 mt-2.5 flex items-center gap-1.5">
+            <CheckCircle size={13} className="text-success shrink-0" />
+            Pelayanan jam subuh atau malam ada tambahan Rp 20.000
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+)}
+
           {/* ── Testimoni ── */}
           {unitTestimonials.length > 0 && (
             <section className="mb-10">
