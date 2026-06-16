@@ -103,7 +103,7 @@ export const UNITS: Unit[] = [
     },
     deskripsi: "SUV mewah diesel untuk perjalanan jauh & medan berat.",
     foto: ["/media/mobil/pajero/revisi pajero.png", "/media/mobil/pajero/pajero3.png", "/media/mobil/pajero/pajero4.png", "/media/mobil/pajero/pajero5.png", "/media/mobil/pajero/pajero6.png"],
-    unggulan: true,
+    unggulan: false,
     tersedia: true,
   },
 
@@ -123,7 +123,7 @@ export const UNITS: Unit[] = [
     },
     deskripsi: "Tampilan sporty & bertenaga, ideal representasi bisnis.",
     foto: ["/media/mobil/fortuner/Revisi fortuner1.png","/media/mobil/fortuner/revisi fortuner.png","/media/mobil/fortuner/fortuner3.jpg", "/media/mobil/fortuner/fortuner4.png", "/media/mobil/fortuner/fortuner5.png"],
-    unggulan: true,
+    unggulan: false,
     tersedia: true,
   },
 
@@ -147,60 +147,194 @@ export const UNITS: Unit[] = [
     tersedia: true,
   },
   
-// hiace
-{
-  id: "toyota-hiace",
-  slug: "toyota-hiace",
-  nama: "Toyota HiAce",
-  tipe: "mobil",
-  kategori: "keduanya",
-  spesifikasi: {
-    kapasitas: 14,
-    transmisi: "Manual",
-    bbm: "Diesel",
-    tahun: 2019,
-    fitur: ["AC", "Audio System", "Power Steering", "Curtain"],
+  // hiace
+  {
+    id: "toyota-hiace",
+    slug: "toyota-hiace",
+    nama: "Toyota HiAce",
+    tipe: "mobil",
+    kategori: "keduanya",
+    spesifikasi: {
+      kapasitas: 14,
+      transmisi: "Manual",
+      bbm: "Diesel",
+      tahun: 2019,
+      fitur: ["AC", "Audio System", "Power Steering", "Curtain"],
+    },
+    deskripsi: "Minibus kapasitas besar ideal untuk rombongan, wisata, dan perjalanan korporat.",
+    foto: ["/media/mobil/hiAce-premio/hiace revisi.png","/media/mobil/hiAce-premio/hiace revisi1.png","/media/mobil/hiAce-premio/hiAce.png","/media/mobil/hiAce-premio/hiAce2.png","/media/mobil/hiAce-premio/hiAce3.png","/media/mobil/hiAce-premio/hiAce4.png","/media/mobil/hiAce-premio/hiAce5.png"],
+    unggulan: false,
+    tersedia: true,
   },
-  deskripsi: "Minibus kapasitas besar ideal untuk rombongan, wisata, dan perjalanan korporat.",
-  foto: ["/media/mobil/hiAce-premio/hiace revisi.png","/media/mobil/hiAce-premio/hiace revisi1.png","/media/mobil/hiAce-premio/hiAce.png","/media/mobil/hiAce-premio/hiAce2.png","/media/mobil/hiAce-premio/hiAce3.png","/media/mobil/hiAce-premio/hiAce4.png","/media/mobil/hiAce-premio/hiAce5.png"],
-  unggulan: false,
-  tersedia: true,
-},
 
-// mercy
-{
-  id: "mercedes-s450",
-  slug: "mercedes-s450",
-  nama: "Mercedes-Benz S450",
+  // mercy
+  {
+    id: "mercedes-s450",
+    slug: "mercedes-s450",
+    nama: "Mercedes-Benz S450",
+    tipe: "mobil",
+    kategori: "driver",
+    spesifikasi: {
+      kapasitas: 4,
+      transmisi: "Automatic",
+      bbm: "Bensin",
+      tahun: 2022,
+      fitur: [
+        "Executive Rear Seat",
+        "Panoramic Sunroof",
+        "Ambient Lighting",
+        "Massage Seat",
+        "Premium Sound System",
+        "Electric Seat"
+      ],
+    },
+    deskripsi:
+      "Sedan mewah premium untuk perjalanan VIP, tamu eksekutif, wedding, dan acara eksklusif dengan kenyamanan kelas atas.",
+    foto: [
+      "/media/mobil/mercy/mercy1.png",
+      "/media/mobil/mercy/mercy.png",
+      "/media/mobil/mercy/mercy2.png",
+      "/media/mobil/mercy/mercy3.png",
+      "/media/mobil/mercy/mercy4.png"
+    ],
+    unggulan: true,
+    tersedia: true,
+  },
+
+  // Toyota Xovy
+  {
+  id: "toyota-voxy",
+  slug: "toyota-voxy",
+  nama: "Toyota Voxy",
   tipe: "mobil",
   kategori: "driver",
   spesifikasi: {
-    kapasitas: 4,
+    kapasitas: 7,
     transmisi: "Automatic",
     bbm: "Bensin",
-    tahun: 2022,
+    tahun: 2023,
     fitur: [
-      "Executive Rear Seat",
-      "Panoramic Sunroof",
-      "Ambient Lighting",
-      "Massage Seat",
-      "Premium Sound System",
-      "Electric Seat"
+      "Captain Seat",
+      "Electric Sliding Door",
+      "Toyota Safety Sense",
+      "Touchscreen Head Unit",
+      "AC Digital"
     ],
   },
   deskripsi:
-    "Sedan mewah premium untuk perjalanan VIP, tamu eksekutif, wedding, dan acara eksklusif dengan kenyamanan kelas atas.",
+    "MPV premium yang nyaman untuk perjalanan keluarga, bisnis, dan antar jemput bandara.",
   foto: [
-    "/media/mobil/mercy/mercy1.png",
-    "/media/mobil/mercy/mercy.png",
-    "/media/mobil/mercy/mercy2.png",
-    "/media/mobil/mercy/mercy3.png",
-    "/media/mobil/mercy/mercy4.png"
+    "/media/mobil/Toyota Voxy/voxy1.png",
+    "/media/mobil/Toyota Voxy/voxy2.png",
+    "/media/mobil/Toyota Voxy/voxy3.png",
+    "/media/mobil/Toyota Voxy/voxy4.png"
+  ],
+  unggulan: false,
+  tersedia: true,
+  },
+
+  // Lexus LM
+  {
+  id: "lexus-lm350h",
+  slug: "lexus-lm350h",
+  nama: "Lexus LM 350h",
+  tipe: "mobil",
+  kategori: "driver",
+  spesifikasi: {
+    kapasitas: 7,
+    transmisi: "Automatic",
+    bbm: "Hybrid",
+    tahun: 2024,
+    fitur: [
+      "Captain Seat",
+      "Ottoman Seat",
+      "Panoramic Roof",
+      "Premium Audio",
+      "Electric Sliding Door",
+      "Ambient Lighting"
+      ],
+    },
+    deskripsi:
+      "MPV ultra premium untuk tamu VIP, eksekutif, dan perjalanan mewah dengan kenyamanan kelas atas.",
+    foto: [
+      "/media/mobil/Lexus LM/lexus2.png",
+      "/media/mobil/Lexus LM/lexus1.png",
+      "/media/mobil/Lexus LM/lexus3.png",
+      "/media/mobil/Lexus LM/lexus4.png",
+      "/media/mobil/Lexus LM/lexus5.png"
+    ],
+    unggulan: true,
+    tersedia: true,
+  },
+
+  // land cruiser
+  {
+  id: "toyota-land-cruiser-gr",
+  slug: "toyota-land-cruiser-gr",
+  nama: "Toyota Land Cruiser GR",
+  tipe: "mobil",
+  kategori: "driver",
+  spesifikasi: {
+    kapasitas: 7,
+    transmisi: "Automatic",
+    bbm: "Diesel",
+    tahun: 2023,
+    fitur: [
+      "4WD",
+      "Sunroof",
+      "Leather Seat",
+      "Toyota Safety Sense",
+      "Premium Audio"
+      ],
+    },
+    deskripsi:
+      "SUV premium berperforma tinggi untuk perjalanan VIP, wisata, dan medan berbagai kondisi jalan.",
+    foto: [
+      "/media/mobil/Land-Cruiser /land1.png",
+      "/media/mobil/Land-Cruiser /land2.png",
+      "/media/mobil/Land-Cruiser /land3.png",
+      "/media/mobil/Land-Cruiser /land4.png",
+      "/media/mobil/Land-Cruiser /land5.png"
+    ],
+    unggulan: true,
+    tersedia: true,
+  },
+
+  // big and medium bus
+{
+  id: "bus-pariwisata",
+  slug: "bus-pariwisata",
+  nama: "Bus Pariwisata",
+  tipe: "mobil",
+  kategori: "driver",
+  spesifikasi: {
+    kapasitas: 59,
+    transmisi: "Manual",
+    bbm: "Diesel",
+    tahun: 2023,
+    fitur: [
+      "Full AC",
+      "Reclining Seat",
+      "TV LED",
+      "Audio Entertainment",
+      "Microphone",
+      "Bagasi Luas",
+    ],
+  },
+  deskripsi:
+    "Tersedia Medium Bus (29–35 seat) dan Big Bus (45–59 seat) untuk wisata, outing kantor, study tour, dan perjalanan rombongan.",
+  foto: [
+    "/media/mobil/big and medium bus/bus4.png",
+    "/media/mobil/big and medium bus/bus2.png",
+    "/media/mobil/big and medium bus/bus3.png",
+    "/media/mobil/big and medium bus/bus1.png",
+    "/media/mobil/big and medium bus/bus5.png",
+    "/media/mobil/big and medium bus/bus6.png",
+    "/media/mobil/big and medium bus/bus7.png",
   ],
   unggulan: true,
   tersedia: true,
 },
-
   // ── MOTOR ───────────────────────────────────────────────────────────────
 
   // scoopy keyless 2026
