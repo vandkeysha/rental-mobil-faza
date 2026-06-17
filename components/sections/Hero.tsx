@@ -20,28 +20,24 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-azure-500 text-white overflow-hidden min-h-[680px] lg:min-h-[620px]">
+    <section className="relative text-white overflow-hidden min-h-[680px] lg:min-h-[620px]">
 
-      {/* Gambar desktop */}
+      {/* Background foto */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/hero-kendaraan.svg"
+        src="/media/hero-img.png"
         alt=""
         aria-hidden="true"
-        className="hidden lg:block absolute top-1/2 -translate-y-1/2 h-[150%] w-auto pointer-events-none select-none"
-        style={{ right: "-12%" }}
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Gambar mobile */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/hero-kendaraan.svg"
-        alt=""
-        aria-hidden="true"
-        className="lg:hidden absolute -bottom-4 left-1/2 -translate-x-1/2 w-[85%] max-w-sm pointer-events-none select-none opacity-40"
-      />
+      {/* Overlay gradient — kiri 100% ke kanan 0% */}
+  <div
+  className="absolute inset-0"
+  style={{ background: "linear-gradient(to right, #1a6fffee 25%, #2979ff99 55%, #3d8bff33 80%, transparent 100%)" }}
+  />
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 pt-40 pb-16 sm:pt-48 sm:pb-16 lg:py-24">
         <div className="lg:max-w-[52%]">
 
           {/* Micro-trust */}
@@ -53,7 +49,7 @@ export default function Hero() {
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 hero-title">
             Rental Mobil & Motor<br />
-            <span className="text-blue-100">Terpercaya di Cikarang</span>
+            <span className="text-gold-400">Terpercaya di Cikarang</span>
           </h1>
 
           {/* Deskripsi */}

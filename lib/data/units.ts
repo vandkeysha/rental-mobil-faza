@@ -244,7 +244,7 @@ export const UNITS: Unit[] = [
     kapasitas: 7,
     transmisi: "Automatic",
     bbm: "Hybrid",
-    tahun: 2024,
+    tahun: 2025,
     fitur: [
       "Captain Seat",
       "Ottoman Seat",
@@ -278,7 +278,7 @@ export const UNITS: Unit[] = [
     kapasitas: 7,
     transmisi: "Automatic",
     bbm: "Diesel",
-    tahun: 2023,
+    tahun: 2024,
     fitur: [
       "4WD",
       "Sunroof",
@@ -311,7 +311,7 @@ export const UNITS: Unit[] = [
     kapasitas: 59,
     transmisi: "Manual",
     bbm: "Diesel",
-    tahun: 2023,
+    tahun: 2024,
     fitur: [
       "Full AC",
       "Reclining Seat",
